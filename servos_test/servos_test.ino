@@ -39,11 +39,6 @@ void setup()
 {
   // Set the serial baud rate.
   maestroSerial.begin(9600);
-
-  maestro.setSpeed(0, 5);
-  maestro.setAcceleration(0,127);
-  maestro.setSpeed(1, 5);
-  maestro.setAcceleration(1,127);
 }
 
 void loop()
@@ -70,29 +65,47 @@ void loop()
   smooth motion from one point to another. */
   //maestro.setAcceleration(i, 0);
 
-  maestro.setSpeed(0, 10);
-  maestro.setAcceleration(0,127);
-  maestro.setSpeed(1, 10);
-  maestro.setAcceleration(1,127);
+  maestro.setSpeed(0, 11);
+  maestro.setSpeed(1, 11);
+  maestro.setSpeed(2, 5);
+  maestro.setSpeed(3, 11);
+  maestro.setSpeed(4, 11);
+  maestro.setSpeed(5, 5);
+
+  maestro.setAcceleration(0,0);
+  maestro.setAcceleration(1,0);
+  maestro.setAcceleration(2,0);
+  maestro.setAcceleration(3,0);
+  maestro.setAcceleration(4,0);
+  maestro.setAcceleration(5,0);
 
   // Initial position
   maestro.setTarget(0, 2000);
   maestro.setTarget(1, 2000);
-  delay(8000);
+  maestro.setTarget(2, 2000);
+  maestro.setTarget(3, 2000);
+  maestro.setTarget(4, 2000);
+  maestro.setTarget(5, 10000);
+  delay(6000);
 
-  maestro.setSpeed(0, 10);
-  maestro.setAcceleration(0,127);
-  maestro.setSpeed(1, 10);
-  maestro.setAcceleration(1,127);
-
-  // Move 90 degrees
+  // Lift front legs 90 degrees
   maestro.setTarget(0, 10000);
   maestro.setTarget(1, 10000);
-  delay(8000);
-  
-  
-  
+  maestro.setTarget(3, 10000);
+  maestro.setTarget(4, 10000);
+  // Move shoulders forward
+  maestro.setTarget(2, 6800);
+  maestro.setTarget(5, 5200);
+  delay(3000);
 
-  
+  // Move back
+  maestro.setTarget(0, 2000);
+  maestro.setTarget(1, 2000);
+  maestro.setTarget(3, 2000);
+  maestro.setTarget(4, 2000);
+  delay(3000);
+
+  // Wait for other legs
+  delay(6000);
   
 }
