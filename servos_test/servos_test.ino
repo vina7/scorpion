@@ -65,12 +65,26 @@ void loop()
   smooth motion from one point to another. */
   //maestro.setAcceleration(i, 0);
 
+  // Parts:
+  //                Foot | Leg | Shoulder
+  // Front Left Leg:  0     1     2
+  // Front Right Leg: 3     4     5
+  // Mid Left Leg:    6     7     8
+  // Mid Right Leg:   9     10     11
+
+
   maestro.setSpeed(0, 11);
   maestro.setSpeed(1, 11);
   maestro.setSpeed(2, 5);
   maestro.setSpeed(3, 11);
   maestro.setSpeed(4, 11);
   maestro.setSpeed(5, 5);
+  maestro.setSpeed(6, 11);
+  maestro.setSpeed(7, 11);
+  maestro.setSpeed(8, 5);
+  maestro.setSpeed(9, 11);
+  maestro.setSpeed(10, 11);
+  maestro.setSpeed(11, 5);
 
   maestro.setAcceleration(0,0);
   maestro.setAcceleration(1,0);
@@ -78,24 +92,38 @@ void loop()
   maestro.setAcceleration(3,0);
   maestro.setAcceleration(4,0);
   maestro.setAcceleration(5,0);
-
+  maestro.setAcceleration(6,0);
+  maestro.setAcceleration(7,0);
+  maestro.setAcceleration(8,0);
+  maestro.setAcceleration(9,0);
+  maestro.setAcceleration(10,0);
+  maestro.setAcceleration(11,0);
+  
   // Initial position
+  // First set of legs
   maestro.setTarget(0, 2000);
   maestro.setTarget(1, 2000);
-  maestro.setTarget(2, 2000);
+  maestro.setTarget(2, 6000);
   maestro.setTarget(3, 2000);
   maestro.setTarget(4, 2000);
-  maestro.setTarget(5, 10000);
-  delay(6000);
+  maestro.setTarget(5, 6000);
+  // Second set of legs
+  maestro.setTarget(6, 2000);
+  maestro.setTarget(7, 2000);
+  maestro.setTarget(8, 6000);
+  maestro.setTarget(9, 2000);
+  maestro.setTarget(10, 2000);
+  maestro.setTarget(11, 6000);
+  delay(3000);
 
   // Lift front legs 90 degrees
   maestro.setTarget(0, 10000);
   maestro.setTarget(1, 10000);
   maestro.setTarget(3, 10000);
   maestro.setTarget(4, 10000);
-  // Move shoulders forward
-  maestro.setTarget(2, 6800);
-  maestro.setTarget(5, 5200);
+  // Move shoulders backwards
+  maestro.setTarget(2, 2000);
+  maestro.setTarget(5, 10000);
   delay(3000);
 
   // Move back
@@ -104,8 +132,125 @@ void loop()
   maestro.setTarget(3, 2000);
   maestro.setTarget(4, 2000);
   delay(3000);
-
-  // Wait for other legs
-  delay(6000);
   
+  // Lift front legs 90 degrees
+  maestro.setTarget(6, 10000);
+  maestro.setTarget(7, 10000);
+  maestro.setTarget(9, 10000);
+  maestro.setTarget(10, 10000);
+  // Move shoulders forward
+  maestro.setTarget(2, 6000);
+  maestro.setTarget(5, 6000);
+  delay(3000);
+
+  // Move back
+  maestro.setTarget(6, 2000);
+  maestro.setTarget(7, 2000);
+  maestro.setTarget(9, 2000);
+  maestro.setTarget(10, 2000);
+  delay(3000);
+
+  // Wait
+  delay(3000);
 }
+
+void ForwardMovement() {
+  
+  // Lift front legs 90 degrees
+  maestro.setTarget(0, 10000);
+  maestro.setTarget(1, 10000);
+  maestro.setTarget(3, 10000);
+  maestro.setTarget(4, 10000);
+  // Move shoulders forward
+  maestro.setTarget(2, 10000);
+  maestro.setTarget(5, 2000);
+  delay(3000);
+
+  // Move back
+  maestro.setTarget(0, 2000);
+  maestro.setTarget(1, 2000);
+  maestro.setTarget(3, 2000);
+  maestro.setTarget(4, 2000);
+  delay(3000);
+  
+  // Lift front legs 90 degrees
+  maestro.setTarget(6, 10000);
+  maestro.setTarget(7, 10000);
+  maestro.setTarget(9, 10000);
+  maestro.setTarget(10, 10000);
+  // Move shoulders back
+  maestro.setTarget(2, 6000);
+  maestro.setTarget(5, 6000);
+  delay(3000);
+
+  // Move back
+  maestro.setTarget(6, 2000);
+  maestro.setTarget(7, 2000);
+  maestro.setTarget(9, 2000);
+  maestro.setTarget(10, 2000);
+  delay(3000);
+}
+
+void ReverseMovement() {
+  maestro.setSpeed(0, 11);
+  maestro.setSpeed(1, 11);
+  maestro.setSpeed(2, 5);
+  maestro.setSpeed(3, 11);
+  maestro.setSpeed(4, 11);
+  maestro.setSpeed(5, 5);
+  maestro.setSpeed(6, 11);
+  maestro.setSpeed(7, 11);
+  maestro.setSpeed(8, 5);
+  maestro.setSpeed(9, 11);
+  maestro.setSpeed(10, 11);
+  maestro.setSpeed(11, 5);
+
+  maestro.setAcceleration(0,0);
+  maestro.setAcceleration(1,0);
+  maestro.setAcceleration(2,0);
+  maestro.setAcceleration(3,0);
+  maestro.setAcceleration(4,0);
+  maestro.setAcceleration(5,0);
+  maestro.setAcceleration(6,0);
+  maestro.setAcceleration(7,0);
+  maestro.setAcceleration(8,0);
+  maestro.setAcceleration(9,0);
+  maestro.setAcceleration(10,0);
+  maestro.setAcceleration(11,0);
+  
+  
+  // Lift front legs 90 degrees
+  maestro.setTarget(0, 10000);
+  maestro.setTarget(1, 10000);
+  maestro.setTarget(3, 10000);
+  maestro.setTarget(4, 10000);
+  // Move shoulders backwards
+  maestro.setTarget(2, 2000);
+  maestro.setTarget(5, 10000);
+  delay(3000);
+
+  // Move back
+  maestro.setTarget(0, 2000);
+  maestro.setTarget(1, 2000);
+  maestro.setTarget(3, 2000);
+  maestro.setTarget(4, 2000);
+  delay(3000);
+  
+  // Lift front legs 90 degrees
+  maestro.setTarget(6, 10000);
+  maestro.setTarget(7, 10000);
+  maestro.setTarget(9, 10000);
+  maestro.setTarget(10, 10000);
+  // Move shoulders forward
+  maestro.setTarget(2, 6000);
+  maestro.setTarget(5, 6000);
+  delay(3000);
+
+  // Move back
+  maestro.setTarget(6, 2000);
+  maestro.setTarget(7, 2000);
+  maestro.setTarget(9, 2000);
+  maestro.setTarget(10, 2000);
+  delay(3000);
+}
+
