@@ -72,6 +72,7 @@ void loop()
   // Mid Left Leg:    6     7     8
   // Mid Right Leg:   9     10     11
 
+  // Turn left - move "Triangle"
 
   maestro.setSpeed(0, 11);
   maestro.setSpeed(1, 11);
@@ -116,38 +117,38 @@ void loop()
   maestro.setTarget(11, 6000);
   delay(3000);
 
-  // Lift front legs 90 degrees
+  // Lift front left leg, back left leg and middle right leg 90 degrees
   maestro.setTarget(0, 10000);
   maestro.setTarget(1, 10000);
-  maestro.setTarget(3, 10000);
-  maestro.setTarget(4, 10000);
-  // Move shoulders backwards
+  maestro.setTarget(9, 10000);
+  maestro.setTarget(10, 10000);
+  // Rotate shoulders
   maestro.setTarget(2, 2000);
-  maestro.setTarget(5, 10000);
+  maestro.setTarget(11, 2000);
   delay(3000);
 
   // Move back
   maestro.setTarget(0, 2000);
   maestro.setTarget(1, 2000);
-  maestro.setTarget(3, 2000);
-  maestro.setTarget(4, 2000);
+  maestro.setTarget(9, 2000);
+  maestro.setTarget(10, 2000);
   delay(3000);
   
-  // Lift front legs 90 degrees
+  // Lift fornt right leg, back right leg and middle left leg 90 degrees
+  maestro.setTarget(3, 10000);
+  maestro.setTarget(4, 10000);
   maestro.setTarget(6, 10000);
   maestro.setTarget(7, 10000);
-  maestro.setTarget(9, 10000);
-  maestro.setTarget(10, 10000);
-  // Move shoulders forward
+  // Move shoulders back
   maestro.setTarget(2, 6000);
   maestro.setTarget(11, 6000);
   delay(3000);
 
   // Move back
+  maestro.setTarget(3, 2000);
+  maestro.setTarget(4, 2000);
   maestro.setTarget(6, 2000);
   maestro.setTarget(7, 2000);
-  maestro.setTarget(9, 2000);
-  maestro.setTarget(10, 2000);
   delay(3000);
 
   // Wait
